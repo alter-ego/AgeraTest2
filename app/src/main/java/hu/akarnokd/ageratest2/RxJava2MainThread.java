@@ -42,7 +42,7 @@ public final class RxJava2MainThread extends Scheduler {
                 handler.removeCallbacks(run);
                 return EmptyDisposable.INSTANCE;
             }
-            return Disposables.from(() -> handler.removeCallbacks(run));
+            return Disposables.fromRunnable(() -> handler.removeCallbacks(run));
         }
 
         @Override
